@@ -8,10 +8,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-        <Menu Height="30" DockPanel.Dock="Top">
-            <MenuItem Header="file" Height="30" VerticalAlignment="Center" FontSize="16">
-                <MenuItem Header="new document" VerticalAlignment="center" FontSize="16"/>
-                <MenuItem Header="save as" VerticalAlignment="center" FontSize="16"/>
+        <Menu Height="30" DockPanel.Dock="Top" Background="Gray">
+            <MenuItem Header="file" Height="30"  VerticalAlignment="Center" FontSize="16">
+                <MenuItem x:Name="openmenuitem" Header="new document" VerticalAlignment="center" FontSize="16" Click="OpenCanvas_Click"/>
+                <MenuItem Header="savemenuitem" VerticalAlignment="center" FontSize="16" Click="SaveCanvas_Click"/>
 
             </MenuItem>
 
@@ -26,24 +26,24 @@
                 <Label FontSize="14" FontWeight="Bold" Margin="30,0,0,0" Content="{Binding Value, ElementName=thickslider}" VerticalAlignment="Center"/>
             </ToolBar>
             <ToolBar Height="38" Width="300" Background="Bisque">
-                <RadioButton Width="38" Height="38" Tag="Line" Checked="RadioButton_Checked">
-                    <Image Source="line.png" />
+                <RadioButton Width="38" Height="38" Tag="Line" Checked="ShapeButton_Checked">
+                    <Image Source="/williapp;component/Image/line.png" />
                 </RadioButton>
                 <RadioButton Width="38" Height="38" Tag="Rectangle" Checked="ShapeButton_Checked">
-                    <Image Source="rectangle.png" />
+                    <Image Source="/williapp;component/Image/rectangle.png" />
                 </RadioButton>
                 <RadioButton Width="38" Height="38" Tag="Ellipse" Checked="ShapeButton_Checked">
-                    <Image Source="ellipse.png" />
+                    <Image Source="/williapp;component/Image/ellipse.png" />
                 </RadioButton>
                 <RadioButton Width="38" Height="38" Tag="Polyline" Checked="ShapeButton_Checked">
-                    <Image Source="polyline.png" />
+                    <Image Source="/williapp;component/Image/polyline.png" />
                 </RadioButton>
                 <Separator />
                 <Button x:Name="EraserButton"  Width="38" Height="38" Tag="Eraser" Click="EraserButton_Click">
-                    <Image Width="32" Height="32" Source="eraser.png"/>
+                    <Image Width="32" Height="32" Source="/williapp;component/Image/eraser.png"/>
                 </Button>
                 <Button x:Name="ClearButton"  Width="38" Height="38" Tag="Clear" Click="ClearButton_Click">
-                    <Image Width="32" Height="32" Source="trashcan.png"/>
+                    <Image Width="32" Height="32" Source="/williapp;component/Image/trashcan.png"/>
                 </Button>
             </ToolBar>
         </ToolBarTray>
@@ -61,7 +61,7 @@
                        " VerticalAlignment="Center" FontSize="14" Width="394" />
             </StatusBarItem>
         </StatusBar>
-        <Canvas x:Name="canvas" Background="Wheat" MouseEnter="canvas_MouseEnter"   MouseLeftButtonDown="canvas_MouseLeftButtonDown" MouseUp="canvasmouseup" MouseMove="canvamousemove"/>
+        <Canvas x:Name="canvas" Background="Wheat" MouseEnter="canvas_MouseEnter"   MouseLeftButtonDown="canvas_MouseLeftButtonDown" MouseMove="canvamousemove"  MouseLeftButtonUp="MyCanvas_MouseLeftButtonUp"/>
 
 
 
